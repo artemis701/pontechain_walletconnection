@@ -13,11 +13,12 @@ const options = {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const AnyComponent = Component as any;
   return (
     <SigningCosmWasmProvider>
       <AlertProvider template={AlertTemplate} {...options}>
         <Layout>
-          <Component {...pageProps} />
+          <AnyComponent {...pageProps} />
         </Layout>
       </AlertProvider>
     </SigningCosmWasmProvider>
